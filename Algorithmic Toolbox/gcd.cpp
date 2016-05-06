@@ -14,34 +14,34 @@ int gcd(int a, int b) {
   return current_gcd;
 }
 
-int gcd_fast(int a, int b){
+long long gcd_fast(long long a, long long b){
   if(b > a) std::swap(a, b);
   if(b == 0) return a;
   return gcd_fast(b, a % b);
 }
 
 int main() {
-  int a, b;
-  //std::cin >> a >> b;
-  //std::cout << gcd(a, b) << std::endl;
+  long long a, b;
+  std::cin >> a >> b;
+  std::cout << gcd_fast(a, b) << std::endl;
   
-  int fast = 0;
-  int slow = 0;
-  while(1){
-      a = rand() % 100000;
-      b = rand() % 100000;
-      fast = gcd_fast(a, b);
-      slow = gcd(a, b);
-      if(fast == slow){
-        std::cout << a << "" << b << std::endl;
-        std::cout << slow << " " << fast << std::endl;
-        std::cout << "OK!" << std::endl;
-      }else{
-        std::cout << a << "" << b << std::endl;
-        std::cout << slow << " " << fast << std::endl;
-        std::cout << "NOT OK!" << std::endl;
-        break;
-      } 
-    }
+  // int fast = 0;
+  // int slow = 0;
+  // while(1){
+  //     a = rand() % 100000;
+  //     b = rand() % 100000;
+  //     fast = gcd_fast(a, b);
+  //     slow = gcd(a, b);
+  //     if(fast == slow){
+  //       std::cout << a << "" << b << std::endl;
+  //       std::cout << slow << " " << fast << std::endl;
+  //       std::cout << "OK!" << std::endl;
+  //     }else{
+  //       std::cout << a << "" << b << std::endl;
+  //       std::cout << slow << " " << fast << std::endl;
+  //       std::cout << "NOT OK!" << std::endl;
+  //       break;
+  //     } 
+  //   }
   return 0;
 }
