@@ -14,14 +14,14 @@ int gcd(int a, int b) {
   return current_gcd;
 }
 
-long long gcd_fast(long long a, long long b){
+int gcd_fast(int a, int b){
   if(b > a) std::swap(a, b);
   if(b == 0) return a;
   return gcd_fast(b, a % b);
 }
 
 int main() {
-  long long a, b;
+  int a, b;
   std::cin >> a >> b;
   std::cout << gcd_fast(a, b) << std::endl;
   

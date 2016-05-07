@@ -2,7 +2,7 @@
 #include <vector>
 #include <stdlib.h>
 
-int get_fibonacci_last_digit(long long n) {
+int get_fibonacci_last_digit(int n) {
   //write your code here
   if (n <= 1){
       return n;
@@ -10,15 +10,16 @@ int get_fibonacci_last_digit(long long n) {
       std::vector<int> f;
       f.push_back(0);
       f.push_back(1);
-      for(long long i=2; i<=n; i++){
-        f.push_back((f[i-1] + f[i-2]) % 10);
+      for(int i=2; i<=n; i++){
+        f.push_back((f.back() + f[size()-2]) % 10);
+        f.erase(f.begin());
       }
       return f.back();
   }
 }
 
 int main() {
-  long long n = 0;
+  int n = 0;
   std::cin >> n;
   int c = get_fibonacci_last_digit(n);
   std::cout << c << '\n';

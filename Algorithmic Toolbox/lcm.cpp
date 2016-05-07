@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-long long gcd_fast(long long a, long long b){
+int gcd_fast(int a, int b){
   if(b > a) std::swap(a, b);
   if(b == 0) return a;
   return gcd_fast(b, a % b);

@@ -8,7 +8,7 @@ long long get_fibonaccihuge(long long n, long long m) {
   if (n <= 1){
     return n;
   }else{
-    int period = 0;
+    long long period = 0;
     std::vector<int> f;
     f.push_back(0);
     f.push_back(1);
@@ -18,11 +18,9 @@ long long get_fibonaccihuge(long long n, long long m) {
       if(f.back() == 1 && f[f.size()-2] == 0)
         break;
     }
-    int index = n % period;
+    long long index = n % period;
     return f[index];
   }
-  
-  
   return 0;
 }
 
