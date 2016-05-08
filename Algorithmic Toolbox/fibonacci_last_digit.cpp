@@ -11,7 +11,7 @@ int get_fibonacci_last_digit(int n) {
       f.push_back(0);
       f.push_back(1);
       for(int i=2; i<=n; i++){
-        f.push_back((f.back() + f[size()-2]) % 10);
+        f.push_back((f.back() + f[f.size()-2]) % 10);
         f.erase(f.begin());
       }
       return f.back();
